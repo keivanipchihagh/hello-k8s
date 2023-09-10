@@ -7,8 +7,8 @@ load_dotenv()
 
 
 @APP.route("/")
-def hello():
-  return render_template ("index.html")
+def index():
+  return render_template("index.html")
 
 
 
