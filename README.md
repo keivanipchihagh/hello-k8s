@@ -8,6 +8,23 @@ Simple Hello-World single-page site, written in [Python](https://www.python.org/
 ## What is a CI/CD?
 CI and CD stand for **continuous integration** and **continuous delivery**/**continuous deployment**. In other words, CI is a modern software development practice in which incremental code changes are made frequently and reliably.
 
+## Installation
+### Install Kubernetes
+You can follow the [official](https://kubernetes.io/docs/setup/production-environment/tools/) documentation to install a Kubernetes Cluster on production environment. In case you believe the documentation is written in japanese, follow [this](https://www.linuxtechi.com/install-kubernetes-on-ubuntu-22-04/) tutorial.
+
+### Install Helm
+To install Helm3, run the script below which will automatically connect to your Kubernetes cluster:
+```bash
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+```
+
+### Install flux
+Installing FluxCD is as easy as running the below script:
+```bash
+curl -s https://fluxcd.io/install.sh | sudo bash
+```
+However, to bootstamp FluxCD to your repository, follow [these](https://fluxcd.io/flux/installation/) instructions.
+
 ## Components
 ### Python
 [Python](https://www.python.org/) is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation. Python is dynamically typed and garbage-collected. It supports multiple programming paradigms, including structured, object-oriented and functional programming ([wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language))).
