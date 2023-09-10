@@ -78,6 +78,59 @@ However, to bootstamp FluxCD to your repository, follow [these](https://fluxcd.i
 <!-- USAGE EXAMPLES -->
 ## Usage
 You need the following files under your FluxCD bootstrap repository:
+### `namespace.yaml`:
+```yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+    name: hello-k8s
+```
+### `source.yaml:`
+```yaml
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: hello-k8s
+  namespace: hello-k8s
+spec:
+  interval: 5m
+  url: https://github.com/keivanipchihagh/hello-k8s
+  ref:
+    branch: main
+  ignore: |-
+    # exclude all
+    /*
+    # include charts directory
+    !/charts/
+```
+### `release.yaml`:
+```yaml
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: hello-k8s
+  namespace: hello-k8s
+spec:
+  interval: 1m
+  releaseName: hello-k8s
+  chart:
+    spec:
+      chart: charts
+      sourceRef:
+        kind: GitRepository
+        name: hello-k8s
+  install:
+    createNamespace: true
+```
+### `kustomization.yaml`:
+```yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - namespace.yaml
+  - source.yaml
+  - release.yaml
+```
 
 <!-- CONTRIBUTING -->
 ## Contributing
