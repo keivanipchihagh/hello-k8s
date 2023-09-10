@@ -1,11 +1,6 @@
-* {
-  box-sizing: border-box;
-}
-
 a {
   text-decoration: underline;
-  color: inherit;
-
+  color: black;
 }
 
 footer {
