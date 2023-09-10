@@ -38,6 +38,7 @@ Simple Hello-World single-page site, written in [Python](https://www.python.org/
 ## What is a CI/CD?
 CI and CD stand for **continuous integration** and **continuous delivery**/**continuous deployment**. In other words, CI is a modern software development practice in which incremental code changes are made frequently and reliably.
 
+<!-- Installation -->
 ## Installation
 ### Install Kubernetes
 You can follow the [official](https://kubernetes.io/docs/setup/production-environment/tools/) documentation to install a Kubernetes Cluster on production environment. In case you believe the documentation is written in japanese, follow [this](https://www.linuxtechi.com/install-kubernetes-on-ubuntu-22-04/) tutorial.
@@ -55,6 +56,7 @@ curl -s https://fluxcd.io/install.sh | sudo bash
 ```
 However, to bootstamp FluxCD to your repository, follow [these](https://fluxcd.io/flux/installation/) instructions.
 
+<!-- Components -->
 ## Components
 ### Python
 [Python](https://www.python.org/) is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation. Python is dynamically typed and garbage-collected. It supports multiple programming paradigms, including structured, object-oriented and functional programming ([wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language))).
@@ -75,17 +77,18 @@ However, to bootstamp FluxCD to your repository, follow [these](https://fluxcd.i
 [FluxCD](https://fluxcd.io/) is a Continuous Delivery tool to help keep Kubernetes clusters in sync with configuration sources such as Git repositories and automate configuration updates when available. Flux is built with the GitOps toolkit and supports multi-tenancy and syncing an arbitrary number of Git repositories ([internaldeveloperplatform](https://internaldeveloperplatform.org/cd-operators/flux-cd/)).
 
 
-<!-- USAGE EXAMPLES -->
+<!-- USAGE -->
 ## Usage
 You need the following files under your FluxCD bootstrap repository:
-### `namespace.yaml`:
+
+`namespace.yaml`:
 ```yaml
 apiVersion: v1
 kind: Namespace
 metadata:
     name: hello-k8s
 ```
-### `source.yaml:`
+`source.yaml:`
 ```yaml
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
@@ -103,7 +106,7 @@ spec:
     # include charts directory
     !/charts/
 ```
-### `release.yaml`:
+`release.yaml`:
 ```yaml
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
@@ -122,7 +125,7 @@ spec:
   install:
     createNamespace: true
 ```
-### `kustomization.yaml`:
+`kustomization.yaml`:
 ```yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization

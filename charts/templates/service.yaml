@@ -9,7 +9,7 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    {{- toYaml .Values.service.ports | nindent 3 -}}
+    {{- toYaml .Values.service.ports | nindent 4 -}}
   selector:
     app: {{ .Release.Name }}
 {{- end }}
