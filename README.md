@@ -5,6 +5,36 @@ Simple Hello-World single-page site, written in [Python](https://www.python.org/
   <img src="./archive/img/logo.png" />
 </p>
 
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#what-is-a-cicd">What is a CI/CD?</a></li>
+    <li>
+      <a href="#installation">Installation</a>
+      <ul>
+        <li><a href="#install-kubernetes">Install Kubernetes</a></li>
+        <li><a href="#install-helm">Install Helm</a></li>
+        <li><a href="#install-flux">Install flux</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#components">Components</a>
+      <ul>
+        <li><a href="#python">Python</a></li>
+        <li><a href="#flask">Flask</a></li>
+        <li><a href="#github-actions">GitHub Actions</a></li>
+        <li><a href="#kubernetes">Kubernetes</a></li>
+        <li><a href="#helm">Helm</a></li>
+        <li><a href="#fluxcd">FluxCD</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+  </ol>
+</details>
+
 ## What is a CI/CD?
 CI and CD stand for **continuous integration** and **continuous delivery**/**continuous deployment**. In other words, CI is a modern software development practice in which incremental code changes are made frequently and reliably.
 
@@ -43,3 +73,18 @@ However, to bootstamp FluxCD to your repository, follow [these](https://fluxcd.i
 
 ### FluxCD
 [FluxCD](https://fluxcd.io/) is a Continuous Delivery tool to help keep Kubernetes clusters in sync with configuration sources such as Git repositories and automate configuration updates when available. Flux is built with the GitOps toolkit and supports multi-tenancy and syncing an arbitrary number of Git repositories ([internaldeveloperplatform](https://internaldeveloperplatform.org/cd-operators/flux-cd/)).
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+You need the following files under your FluxCD bootstrap repository:
+
+<!-- CONTRIBUTING -->
+## Contributing
+Contributions are warmly welcomed. In case you have a suggestion, please fork the repo and create a pull request. You can also simply open an issue with the relevant tags.
+
+⭐ Also, don't forget to give the project a star!
+
+<!-- LICENSE -->
+## License
+Distributed under the MIT License. See `LICENSE` for more information.
