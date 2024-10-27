@@ -1,11 +1,6 @@
-FROM python:3.11-slim
+FROM python:3.12-slim
 
 ENV DockerHome=/home/services
-
-RUN apt-get update
-RUN apt-get clean
-RUN apt-get autoremove
-RUN apt-get install curl -y
 
 # create the working directory
 RUN mkdir -p ${DockerHome}
